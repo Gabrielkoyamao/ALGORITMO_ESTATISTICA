@@ -1,0 +1,119 @@
+doctype html
+head
+	meta(charset='utf-8')
+	meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+	meta(name='description', content='')
+	meta(name='author', content='')
+	title Modern Business - Start Bootstrap Template
+	link(href='/vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+	link(href='/css/modern-business.css', rel='stylesheet')
+	link(href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet")
+	//- script(src="/js/jquery.js")
+	script(src="/js/jquery.min.js")
+
+	body
+		.jumbotron.col-md-8.offset-md-2(style="background-color: #e9ecefb3")
+			h1.display-4.text-center(style="font-weight: bol1d; color: #000 ") Estatistica Aplicada
+		
+		.wrapper
+			.col-md-6.offset-md-3
+				ul.nav.nav-tabs
+					li.nav-item
+						a.nav-link.prob(href='#', style="text-decoration:none; color:#000") Probabilidade
+					li.nav-item
+						a.nav-link.ts(href='#', style="text-decoration:none; color:#000") Teoria da Soma
+					li.nav-item
+						a.nav-link.tp(href='#', style="text-decoration:none; color:#000") Teoria do Produto
+
+				#formProb.mt-5
+				#formTS.mt-3
+				#formTP.mt-3
+
+	script.
+
+		function tp(){
+
+			data = {
+				cf: $('#cf').val(),
+				cp: $('#cp').val()
+			}
+
+			$.ajax({
+				url: "/calc/tp.json",
+				data: data,
+				success: function(result){
+					console.log(result)
+				}
+			})
+		}
+
+		$('.prob').click(function(){
+
+			var html = '<h2> Probabilidade</h2>'
+			html += '<div class="row">'
+			html += '<div class="col-md-6">'
+			html += '<label>Digite o numero de casos favoraveis:</label>'
+			html += '<input class="form-control" type="number" style="width:200px")">'
+			html += '</div>'
+			html += '<div class="col-md-6">'
+			html += '<label>Digite o numero de casos possiveis:</label>'
+			html += '<input class="form-control" type="number" style="width:200px")">'
+			html += '</div>'
+			html += '<div class="col-md-12"> <button class="btn mt-1 calcprob"> Calcular </button> </div>'
+			
+			
+			//- html += '<div class="col-md-6 mt-2">'
+			//- html += '<div class="row">'
+			//- html += '<div class="col-md-4">'
+			//- html += '<label>Resultado</label>'
+			//- html += '</div>'	
+			//- html += '<div class="col-md-6">'
+			//- html += '<h3> 45% </h3>'
+			//- html += '</div>'
+			//- html += '</div>'
+			//- html += '</div>'
+			
+			$("#formProb").html(html)
+			$("#formTS").html('')
+			$("#formTP").html('')
+		})
+
+		$('.ts').click(function(){
+			var html = '<h2> Teoria da Soma </h2>'
+			html += '<div class="row">'
+			html += '<div class="col-md-6">'
+			html += '<label>Digite o numero de casos favoraveis:</label>'
+			html += '<input name="" class="form-control" type="number" style="width:200px")">'
+			html += '</div>'
+			html += '<div class="col-md-6">'
+			html += '<label>Digite o numero de casos possiveis:</label>'
+			html += '<input name="" class="form-control" type="number" style="width:200px")">'
+			html += '</div>'
+			html += '<div class="col-md-12"> <button class="btn mt-1 calcts"> Calcular </button> </div>'			
+			
+			$("#formTS").html(html)
+			$("#formProb").html('')
+			$("#formTP").html('')		
+		})
+
+		$('.tp').click(function(){
+			var html = '<h2> Teoria do produto </h2>'
+			html += '<div class="row">'
+			html += '<div class="col-md-6">'
+			html += '<label>Digite o numero de casos favoraveis:</label>'
+			html += '<input id="cf" name="cf" class="form-control" type="number" style="width:200px")">'
+			html += '</div>'
+			html += '<div class="col-md-6">'
+			html += '<label>Digite o numero de casos possiveis:</label>'
+			html += '<input id="cp" name="cp" class="form-control" type="number" style="width:200px")">'
+			html += '</div>'
+			html += '<div class="col-md-12"> <input class="btn mt-1" onClick="tp()" value="Calcular"/> </div>'			
+			html += '</div>'
+
+			$("#formTP").html(html)			
+			$("#formProb").html('')
+			$("#formTS").html('')
+		})
+
+		
+

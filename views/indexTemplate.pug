@@ -1,0 +1,161 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description', content='')
+  meta(name='author', content='')
+  title Modern Business - Start Bootstrap Template
+  link(href='/vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+  link(href='/css/modern-business.css', rel='stylesheet')
+
+nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+  .container
+    a.navbar-brand(href='index.html') Matemagica
+    button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    //
+      #navbarResponsive.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link(href='about.html') About
+          li.nav-item
+            a.nav-link(href='services.html') Services
+          li.nav-item
+            a.nav-link(href='contact.html') Contact
+          li.nav-item.dropdown
+            a#navbarDropdownPortfolio.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            .dropdown-menu.dropdown-menu-right(aria-labelledby='navbarDropdownPortfolio')
+              a.dropdown-item(href='portfolio-1-col.html') 1 Column Portfolio
+              a.dropdown-item(href='portfolio-2-col.html') 2 Column Portfolio
+              a.dropdown-item(href='portfolio-3-col.html') 3 Column Portfolio
+              a.dropdown-item(href='portfolio-4-col.html') 4 Column Portfolio
+              a.dropdown-item(href='portfolio-item.html') Single Portfolio Item
+          li.nav-item.dropdown
+            a#navbarDropdownBlog.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            .dropdown-menu.dropdown-menu-right(aria-labelledby='navbarDropdownBlog')
+              a.dropdown-item(href='blog-home-1.html') Blog Home 1
+              a.dropdown-item(href='blog-home-2.html') Blog Home 2
+              a.dropdown-item(href='blog-post.html') Blog Post
+          li.nav-item.dropdown
+            a#navbarDropdownBlog.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            .dropdown-menu.dropdown-menu-right(aria-labelledby='navbarDropdownBlog')
+              a.dropdown-item(href='full-width.html') Full Width Page
+              a.dropdown-item(href='sidebar.html') Sidebar Page
+              a.dropdown-item(href='faq.html') FAQ
+              a.dropdown-item(href='404.html') 404
+              a.dropdown-item(href='pricing.html') Pricing Table
+header
+  #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+    ol.carousel-indicators
+      li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+      li(data-target='#carouselExampleIndicators', data-slide-to='1')
+      li(data-target='#carouselExampleIndicators', data-slide-to='2')
+    .carousel-inner(role='listbox')
+      // Slide One - Set the background image for this slide in the line below
+      .carousel-item.active(style="background-image: url('http://placehold.it/1900x1080')")
+        .carousel-caption.d-none.d-md-block
+          h3 First Slide
+          p This is a description for the first slide.
+      // Slide Two - Set the background image for this slide in the line below
+      .carousel-item(style="background-image: url('http://placehold.it/1900x1080')")
+        .carousel-caption.d-none.d-md-block
+          h3 Second Slide
+          p This is a description for the second slide.
+      // Slide Three - Set the background image for this slide in the line below
+      .carousel-item(style="background-image: url('http://placehold.it/1900x1080')")
+        .carousel-caption.d-none.d-md-block
+          h3 Third Slide
+          p This is a description for the third slide.
+    a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+      span.carousel-control-prev-icon(aria-hidden='true')
+      span.sr-only Previous
+    a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+      span.carousel-control-next-icon(aria-hidden='true')
+      span.sr-only Next
+// Page Content
+.container
+  h1.my-4 Welcome to Modern Business
+  // Marketing Icons Section
+  .row
+    .col-lg-4.mb-4
+      .card.h-100
+        h4.card-header Card Title
+        .card-body
+          p.card-text
+        .card-footer
+          a.btn.btn-primary(href='#') Learn More
+    .col-lg-4.mb-4
+      .card.h-100
+        h4.card-header Card Title
+        .card-body
+          p.card-text
+        .card-footer
+          a.btn.btn-primary(href='#') Learn More
+    .col-lg-4.mb-4
+      .card.h-100
+        h4.card-header Card Title
+        .card-body
+          p.card-text
+        .card-footer
+          a.btn.btn-primary(href='#') Learn More
+  // /.row
+  // Portfolio Section
+    h2 Portfolio Heading
+    .row
+      .col-lg-4.col-sm-6.portfolio-item
+        .card.h-100
+          a(href='#')
+            img.card-img-top(src='http://placehold.it/700x400', alt='')
+          .card-body
+            h4.card-title
+              a(href='#') Project One
+            p.card-text
+      .col-lg-4.col-sm-6.portfolio-item
+        .card.h-100
+          a(href='#')
+            img.card-img-top(src='http://placehold.it/700x400', alt='')
+          .card-body
+            h4.card-title
+              a(href='#') Project Two
+            p.card-text
+      .col-lg-4.col-sm-6.portfolio-item
+        .card.h-100
+          a(href='#')
+            img.card-img-top(src='http://placehold.it/700x400', alt='')
+          .card-body
+            h4.card-title
+              a(href='#') Project Three
+            p.card-text
+      .col-lg-4.col-sm-6.portfolio-item
+        .card.h-100
+          a(href='#')
+            img.card-img-top(src='http://placehold.it/700x400', alt='')
+          .card-body
+            h4.card-title
+              a(href='#') Project Four
+            p.card-text
+      .col-lg-4.col-sm-6.portfolio-item
+        .card.h-100
+          a(href='#')
+            img.card-img-top(src='http://placehold.it/700x400', alt='')
+          .card-body
+            h4.card-title
+              a(href='#') Project Five
+            p.card-text
+      .col-lg-4.col-sm-6.portfolio-item
+        .card.h-100
+          a(href='#')
+            img.card-img-top(src='http://placehold.it/700x400', alt='')
+          .card-body
+            h4.card-title
+              a(href='#') Project Six
+            p.card-text
+ 
+// Footer
+  footer.py-5.bg-dark
+    .container
+      p.m-0.text-center.text-white Copyright &copy; Your Website 2018
+  .container
+// Bootstrap core JavaScript
+script(src='/vendor/jquery/jquery.min.js')
+script(src='/vendor/bootstrap/js/bootstrap.bundle.min.js')
