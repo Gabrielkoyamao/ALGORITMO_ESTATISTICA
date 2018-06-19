@@ -3,57 +3,39 @@ var router = express.Router();
 
 router.all('/prob.json', function (req, res, next) {
 	
+	a = req.body.cf
+	s = req.body.cp
 
-	// a = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero de casos favoraveis"));
-	// s = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero de casos possíveis"));
+	p = (a / s);
+	result = p * 100;
 
-	// p = (a / s);
-	// result = p * 100;
-
-	// JOptionPane.showMessageDialog(null, "A probabilidade é  de  "+p + " ou " + result +"%" );
-
-	var result = 10;
 	res.json(result);
 
 
 })
 
-router.all('/tSoma.json', function (req, res, next) {
+router.all('/ts.json', function (req, res, next) {
 
-	// a = Integer.parseInt(JOptionPane.showInputDialog("Digite o valor do espaço amostral"));
-	// s = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero de evento"));
+	a = req.body.cf
+	s = req.body.cp
 
-	// var a = req.query.a
-	// var n = req.query.n
-	// var e = 
+	p = (s / a) + (s / a);
 
-	// numero de eventos
+	result = p * 100;
 
-	// p = (s / a) + (s / a);
-
-	// result = p * 100;
-	// JOptionPane.showMessageDialog(null, "A probabilidade é  de  "+p + " ou " + result +"%" );
-	var result = 10;
 	res.json(result)
 })
 
 router.all('/tp.json', function (req, res, next) {
 
-	// a = Integer.parseInt(JOptionPane.showInputDialog("Digite o valor do espaço amostral"));
-	// s = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero de evento"));
+	a = req.body.cf
+	s = req.body.cp
 
-	// numero de eventos
+	p = (s / a) * (s / a);
 
-	// p = (s / a) * (s / a);
-
-	// result = p * 100;
-	a = req.query.cf
-	b = req.query.cp
-	
-	var result = 10
+	result = p * 100;
 
 	res.json(result);
-	// JOptionPane.showMessageDialog(null, "A probabilidade é  de  "+p + " ou " + result +"%" );
 		
 })
 
