@@ -3,8 +3,8 @@ var router = express.Router();
 
 router.all('/prob.json', function (req, res, next) {
 	
-	a = req.body.cf
-	s = req.body.cp
+	a = parseInt(req.query.cf)
+	s = parseInt(req.query.cp)
 
 	p = (a / s);
 	result = p * 100;
@@ -16,8 +16,8 @@ router.all('/prob.json', function (req, res, next) {
 
 router.all('/ts.json', function (req, res, next) {
 
-	a = req.body.cf
-	s = req.body.cp
+	a = parseInt(req.query.cf)
+	s = parseInt(req.query.cp)
 
 	p = (s / a) + (s / a);
 
@@ -28,8 +28,8 @@ router.all('/ts.json', function (req, res, next) {
 
 router.all('/tp.json', function (req, res, next) {
 
-	a = req.body.cf
-	s = req.body.cp
+	a = parseInt(req.query.cf)
+	s = parseInt(req.query.cp)
 
 	p = (s / a) * (s / a);
 

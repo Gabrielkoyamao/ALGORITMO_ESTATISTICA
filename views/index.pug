@@ -46,11 +46,11 @@ head
 					var html = '<h2> Teoria do produto </h2>'
 					html += '<div class="row">'
 					html += '<div class="col-md-6">'
-					html += '<label>Digite o numero de casos favoraveis:</label>'
+					html += '<label>Digite o valor do espaco amostral</label>'
 					html += '<input id="cf" name="cf" class="form-control" type="number" style="width:200px")">'
 					html += '</div>'
 					html += '<div class="col-md-6">'
-					html += '<label>Digite o numero de casos possiveis:</label>'
+					html += '<label>Digite o numero de evento</label>'
 					html += '<input id="cp" name="cp" class="form-control" type="number" style="width:200px")">'
 					html += '</div>'
 					html += '<div class="col-md-12"> <input class="btn mt-1" onClick="tp()" value="Calcular"/> </div>'			
@@ -85,11 +85,11 @@ head
 					var html = '<h2> Teoria da Soma </h2>'
 					html += '<div class="row">'
 					html += '<div class="col-md-6">'
-					html += '<label>Digite o numero de casos favoraveis:</label>'
+					html += '<label>Digite o valor do espaco amostral</label>'
 					html += '<input name="" class="form-control" type="number" style="width:200px")">'
 					html += '</div>'
 					html += '<div class="col-md-6">'
-					html += '<label>Digite o numero de casos possiveis:</label>'
+					html += '<label>Digite o numero de evento</label>'
 					html += '<input name="" class="form-control" type="number" style="width:200px")">'
 					html += '</div>'
 					html += '<div class="col-md-12"> <button class="btn mt-1 calcts"> Calcular </button> </div>'			
@@ -111,6 +111,43 @@ head
 		}
 
 		function prob(){
+			data = {
+				cf: $('#cf').val(),
+				cp: $('#cp').val()
+			}
+
+			$.ajax({
+				url: "/calc/prob.json",
+				data: data,
+				success: function(result){
+					
+					var html = '<h2> Probabilidade</h2>'
+					html += '<div class="row">'
+					html += '<div class="col-md-6">'
+					html += '<label>Digite o numero de casos favoraveis</label>'
+					html += '<input id="cf" class="form-control" type="number" style="width:200px")">'
+					html += '</div>'
+					html += '<div class="col-md-6">'
+					html += '<label>Digite o numero de casos possiveis</label>'
+					html += '<input id="cp" class="form-control" type="number" style="width:200px")">'
+					html += '</div>'
+					html += '<div class="col-md-12"> <input class="btn mt-1" value="Calcular" onClick="prob()" /> </div>'
+
+					html += '<div class="col-md-6 mt-2">'
+					html += '<div class="row">'
+					html += '<div class="col-md-4">'
+					html += '<label>Resultado</label>'
+					html += '</div>'	
+					html += '<div class="col-md-6">'
+					html += '<h3 ">'+ result +'</h3>'
+					html += '</div>'
+					html += '</div>'
+					html += '</div>'
+					
+					$("#formProb").html(html)					
+
+				}
+			})
 		}
 
 		$('.prob').click(function(){
@@ -118,11 +155,11 @@ head
 			var html = '<h2> Probabilidade</h2>'
 			html += '<div class="row">'
 			html += '<div class="col-md-6">'
-			html += '<label>Digite o numero de casos favoraveis:</label>'
+			html += '<label>Digite o numero de casos favoraveis</label>'
 			html += '<input id="cf" class="form-control" type="number" style="width:200px")">'
 			html += '</div>'
 			html += '<div class="col-md-6">'
-			html += '<label>Digite o numero de casos possiveis:</label>'
+			html += '<label>Digite o numero de casos possiveis</label>'
 			html += '<input id="cp" class="form-control" type="number" style="width:200px")">'
 			html += '</div>'
 			html += '<div class="col-md-12"> <input class="btn mt-1" value="Calcular" onClick="prob()" /> </div>'
@@ -139,11 +176,11 @@ head
 			var html = '<h2> Teoria da Soma </h2>'
 			html += '<div class="row">'
 			html += '<div class="col-md-6">'
-			html += '<label>Digite o numero de casos favoraveis:</label>'
+			html += '<label>Digite o valor do espaco amostral</label>'
 			html += '<input id="cf" class="form-control" type="number" style="width:200px")">'
 			html += '</div>'
 			html += '<div class="col-md-6">'
-			html += '<label>Digite o numero de casos possiveis:</label>'
+			html += '<label>Digite o numero de evento</label>'
 			html += '<input id="cp" class="form-control" type="number" style="width:200px")">'
 			html += '</div>'
 			html += '<div class="col-md-12"> <input class="btn mt-1 calcts" value="Calcular" onClick="ts()" />  </div>'
@@ -161,11 +198,11 @@ head
 			var html = '<h2> Teoria do produto </h2>'
 			html += '<div class="row">'
 			html += '<div class="col-md-6">'
-			html += '<label>Digite o numero de casos favoraveis:</label>'
+			html += '<label>Digite o valor do espaco amostral</label>'
 			html += '<input id="cf" name="cf" class="form-control" type="number" style="width:200px")">'
 			html += '</div>'
 			html += '<div class="col-md-6">'
-			html += '<label>Digite o numero de casos possiveis:</label>'
+			html += '<label>Digite o numero de evento</label>'
 			html += '<input id="cp" name="cp" class="form-control" type="number" style="width:200px")">'
 			html += '</div>'
 			html += '<div class="col-md-12"> <input class="btn mt-1" onClick="tp()" value="Calcular"/> </div>'			
